@@ -37,3 +37,11 @@ test("validatePassword hyväksyy vähintään 8 merkkiä pitkän salasanan", () 
 
   assert.strictEqual(result, true);
 });
+
+// Tehtävä 4
+// Testataan, että ikä 18 hyväksytään.
+test("validateAge hyväksyy iän 18", () => {
+const result = validateAge(18);
+
+assert.strictEqual(result, true);
+});
