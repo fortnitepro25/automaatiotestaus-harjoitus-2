@@ -19,3 +19,18 @@ test("validateEmail hylkää sähköpostin ilman @-merkkiä", () => {
 
   assert.strictEqual(result, false);
 });
+
+// Tehtävä 1
+test("validatePassword hylkää liian lyhyen salasanan", () => {
+  const result = validatePassword("sala123");
+
+  assert.strictEqual(result, false);
+});
+
+// Tehtävä 2
+// Testataan että liian lyhyt salasana hylätään.
+test("validatePassword hylkää liian lyhyen salasanan", () => {
+const result = validatePassword("sala123");
+
+assert.strictEqual(result, false);
+});
