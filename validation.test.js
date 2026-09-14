@@ -53,3 +53,11 @@ test("validateAge hylkää iän 15", () => {
 
   assert.strictEqual(result, false);
 });
+
+// Tehtävä 6
+// Testataan että ikä 121 hylätään.
+test("validateAge hylkää iän 121", () => {
+const result = validateAge(121);
+
+assert.strictEqual(result, false);
+});
