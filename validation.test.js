@@ -9,21 +9,14 @@ test("validateEmail hyväksyy tavallisen sähköpostiosoitteen", () => {
   assert.strictEqual(result, true);
 });
 
+// Tehtävä 1
 test("validateEmail hylkää sähköpostin ilman @-merkkiä", () => {
   const result = validateEmail("opiskelija.example.com");
 
   assert.strictEqual(result, false);
 });
 
-// Tehtävä 1
-test("validatePassword hylkää liian lyhyen salasanan", () => {
-  const result = validatePassword("sala123");
-
-  assert.strictEqual(result, false);
-});
-
 // Tehtävä 2
-// Testataan että liian lyhyt salasana hylätään.
 test("validatePassword hylkää liian lyhyen salasanan", () => {
   const result = validatePassword("sala123");
 
@@ -31,7 +24,6 @@ test("validatePassword hylkää liian lyhyen salasanan", () => {
 });
 
 // Tehtävä 3
-// Testataan että vähintään 8 merkkiä pitkä salasana hyväksytään.
 test("validatePassword hyväksyy vähintään 8 merkkiä pitkän salasanan", () => {
   const result = validatePassword("salasana");
 
@@ -39,7 +31,6 @@ test("validatePassword hyväksyy vähintään 8 merkkiä pitkän salasanan", () 
 });
 
 // Tehtävä 4
-// Testataan, että ikä 18 hyväksytään.
 test("validateAge hyväksyy iän 18", () => {
   const result = validateAge(18);
 
@@ -47,7 +38,6 @@ test("validateAge hyväksyy iän 18", () => {
 });
 
 // Tehtävä 5
-// Testataan, että ikä 15 hylätään.
 test("validateAge hylkää iän 15", () => {
   const result = validateAge(15);
 
@@ -55,7 +45,6 @@ test("validateAge hylkää iän 15", () => {
 });
 
 // Tehtävä 6
-// Testataan että ikä 121 hylätään.
 test("validateAge hylkää iän 121", () => {
   const result = validateAge(121);
 
@@ -65,30 +54,33 @@ test("validateAge hylkää iän 121", () => {
 // Tehtävä 7
 // Testataan erikoistapauksia: tyhjä sähköposti, tyhjä salasana, ikä merkkijonona ja desimaali-ikä.
 
-// validateEmail("")
 test("validateEmail hylkää tyhjän sähköpostiosoitteen", () => {
-const result = validateEmail("");
+  const result = validateEmail("");
 
-assert.strictEqual(result, false);
+  assert.strictEqual(result, false);
 });
 
-// validatePassword("")
 test("validatePassword hylkää tyhjän salasanan", () => {
-const result = validatePassword("");
+  const result = validatePassword("");
 
-assert.strictEqual(result, false);
+  assert.strictEqual(result, false);
 });
 
-// validateAge("18")
 test("validateAge käsittelee iän 18 merkkijonona", () => {
-const result = validateAge("18");
+  const result = validateAge("18");
 
-assert.strictEqual(result, true);
+  assert.strictEqual(result, true);
 });
 
-// validateAge(18.5)
 test("validateAge hylkää desimaali-iän 18.5", () => {
-const result = validateAge(18.5);
+  const result = validateAge(18.5);
 
-assert.strictEqual(result, false);
+  assert.strictEqual(result, false);
+});
+
+// Tehtävä 8
+test("validateEmail hylkää virheellisen sähköpostin @test.", () => {
+  const result = validateEmail("@test.");
+
+  assert.strictEqual(result, false);
 });
