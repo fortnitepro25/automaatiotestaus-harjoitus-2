@@ -57,7 +57,17 @@ test("validateAge hylkää iän 15", () => {
 // Tehtävä 6
 // Testataan että ikä 121 hylätään.
 test("validateAge hylkää iän 121", () => {
-const result = validateAge(121);
+  const result = validateAge(121);
 
-assert.strictEqual(result, false);
+  assert.strictEqual(result, false);
+});
+
+// Tehtävä 7
+// Testataan erikoistapauksia: tyhjä sähköposti, tyhjä salasana, ikä merkkijonona ja desimaali-ikä.
+
+// validateEmail("")
+test("validateEmail hylkää tyhjän sähköpostiosoitteen", () => {
+  const result = validateEmail("");
+
+  assert.strictEqual(result, false);
 });
