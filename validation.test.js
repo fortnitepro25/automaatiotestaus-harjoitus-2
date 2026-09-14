@@ -67,7 +67,28 @@ test("validateAge hylkää iän 121", () => {
 
 // validateEmail("")
 test("validateEmail hylkää tyhjän sähköpostiosoitteen", () => {
-  const result = validateEmail("");
+const result = validateEmail("");
 
-  assert.strictEqual(result, false);
+assert.strictEqual(result, false);
+});
+
+// validatePassword("")
+test("validatePassword hylkää tyhjän salasanan", () => {
+const result = validatePassword("");
+
+assert.strictEqual(result, false);
+});
+
+// validateAge("18")
+test("validateAge käsittelee iän 18 merkkijonona", () => {
+const result = validateAge("18");
+
+assert.strictEqual(result, true);
+});
+
+// validateAge(18.5)
+test("validateAge hylkää desimaali-iän 18.5", () => {
+const result = validateAge(18.5);
+
+assert.strictEqual(result, false);
 });
